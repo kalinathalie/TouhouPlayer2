@@ -1,0 +1,2 @@
+# TouhouPlayer2
+:)
