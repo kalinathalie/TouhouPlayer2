@@ -1,0 +1,7 @@
+admin:admin:1
+lucas:123456:0
+rafael:654321:0
+balaio:123:1
+huehue:huehue:0
+vip20000:2000:1
+vinicius:123456:1
