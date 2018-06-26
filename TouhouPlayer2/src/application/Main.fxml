@@ -1,41 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MediaController">
    <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="600.0" style="-fx-background-color: #404;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="ChooseFileBtn" mnemonicParsing="false" onAction="#ChooseFile" text="Choose File" />
-            <Button fx:id="PlayBtn" mnemonicParsing="false" onAction="#MusicPlay" text="Play" />
-            <Button fx:id="PauseBtn" mnemonicParsing="false" onAction="#MusicPause" text="Pause" />
+            <HBox prefHeight="54.0" prefWidth="95.0" />
+            <Button fx:id="BtnPause" mnemonicParsing="false" onAction="#MusicPause" style="-fx-background-color: #007;" text="Pause" textFill="WHITE" />
+            <Button fx:id="BtnPlay" mnemonicParsing="false" onAction="#MusicPlay" style="-fx-background-color: #070;" text="Play" textFill="WHITE" />
+            <Button fx:id="BtnStop" mnemonicParsing="false" onAction="#MusicStop" style="-fx-background-color: #700;" text="Stop" textFill="WHITE" />
+            <HBox prefHeight="54.0" prefWidth="196.0" />
+            <HBox prefHeight="54.0" prefWidth="99.0">
+               <children>
+                  <Button fx:id="BtnAddPlaylist" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AddPlaylist" prefHeight="26.0" prefWidth="100.0" text="Add Playlist" textAlignment="CENTER" />
+               </children>
+            </HBox>
          </children>
       </HBox>
    </bottom>
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
+   <left>
+      <VBox alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="94.0" style="-fx-background-color: #404;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="BtnAddPath" mnemonicParsing="false" onAction="#AddPath" prefHeight="26.0" prefWidth="94.0" text="Add Path" />
+            <Button fx:id="BtnAddMusic" mnemonicParsing="false" onAction="#AddMusic" prefHeight="26.0" prefWidth="98.0" text="Add Music" />
+            <Button fx:id="BtnRemove" mnemonicParsing="false" onAction="#RemoveMusic" prefHeight="26.0" prefWidth="106.0" text="Remove" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="346.0" prefWidth="148.0" style="-fx-border-color: #505;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="138.0" style="-fx-background-color: #404;">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" />
+                  <Label fx:id="lblUsername" text="user" textFill="WHITE" />
+                  <Label fx:id="lblVIP" text="VIP" textFill="#e5ff00" />
+               </children>
+            </VBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Playlists" />
+            <ListView fx:id="lstViewPlaylists" prefHeight="394.0" prefWidth="146.0" />
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <HBox prefHeight="346.0" prefWidth="366.0" style="-fx-background-image: url('file:../../media/img/thback.jpg'); -fx-background-repeat: stretch; -fx-background-color: #404;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="300.0" prefWidth="202.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Musics" textAlignment="CENTER" wrappingWidth="200.99922561645508" />
+                  <ListView fx:id="lstViewMusics" prefHeight="258.0" prefWidth="175.0" />
+               </children>
+            </VBox>
+            <HBox prefHeight="346.0" prefWidth="14.0" />
+            <VBox prefHeight="346.0" prefWidth="127.0">
+               <children>
+                  <Text fill="#e1ff00" strokeType="OUTSIDE" strokeWidth="0.0" text="VIP only" textAlignment="CENTER" wrappingWidth="124.53673934936523" />
+                  <Label fx:id="lblPlaylist" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" prefHeight="20.0" prefWidth="127.0" text="Playlist" textFill="WHITE" />
+                  <ListView fx:id="lstViewPlaylist" prefHeight="206.0" prefWidth="127.0" />
+                  <Button fx:id="BtnLoadPlaylist" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoadPlaylist" prefHeight="26.0" prefWidth="129.0" text="Load Playlist" />
+                  <Button fx:id="BtnLoadMusics" mnemonicParsing="false" onAction="#LoadMusic" prefHeight="26.0" prefWidth="157.0" text="Load Musics" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
 </BorderPane>
