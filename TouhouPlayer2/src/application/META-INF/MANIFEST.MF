@@ -1,0 +1,3 @@
+Main-Class: application.Touhou
+Manifest-Version: 1.0
+Built-By: Dell
