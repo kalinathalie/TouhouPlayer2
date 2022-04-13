@@ -74,7 +74,7 @@ public class LoginController {
 				Stage stage = (Stage) source.getScene().getWindow();
 				stage.close();
 				Stage primaryStage = new Stage();
-				Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
+				Parent root = FXMLLoader.load(getClass().getResource("/application/Touhou.fxml"));
 				Scene scene = new Scene(root);
 				primaryStage.setScene(scene);
 				primaryStage.setTitle("TouhouPlayer2");
