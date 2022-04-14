@@ -6,6 +6,8 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import java.io.File;
+
 /**
 * <h1>TouhouMediaPlayer2</h1>
 * This project is just a media player with Touhou musics/design
@@ -23,7 +25,7 @@ public class Touhou extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("TouhouPlayer2 Login");
