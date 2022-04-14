@@ -92,7 +92,7 @@ public class MediaController{
 						}
 					}
 					String path = new File("").getAbsolutePath();
-					FileInputStream streamLoc = new FileInputStream(path+selectedLoc);
+					FileInputStream streamLoc = new FileInputStream(path+"/../"+selectedLoc);
 					
 					player = new MusicPlayer(streamLoc);
 					this.player.getPlay();
@@ -133,7 +133,7 @@ public class MediaController{
 	 */
 	public void AddPath(ActionEvent event){
 		try {
-			apPath = new File(new File("./media/songs/").getCanonicalPath());
+			apPath = new File(new File("/media/songs/").getCanonicalPath());
 			PathChooser = new JFileChooser();
 			PathChooser.setCurrentDirectory(apPath);
 			PathChooser.setDialogTitle("Select a Path");
@@ -144,7 +144,8 @@ public class MediaController{
 				allMusics = addedPath.listFiles();
 				for (File file : allMusics) {
 				    if (file.isFile()) {
-				    	String userpath = new File("db/userdata/userMusics").getAbsolutePath();
+				    	String path = new File("").getAbsolutePath();
+				    	String userpath = new File(path+"/db/userdata/userMusics").getAbsolutePath();
 				    	reader = new BufferedReader(new FileReader(userpath+"/"+username+".txt"));
 					    String line = reader.readLine();
 					    Boolean finded = false;
@@ -186,7 +187,7 @@ public class MediaController{
 	 */
 	public void AddMusic(ActionEvent event){
 		try {
-			apMusic = new File(new File("./media/songs/").getCanonicalPath());
+			apMusic = new File(new File("/media/songs/").getCanonicalPath());
 			MusicChooser = new JFileChooser();
 			FileNameExtensionFilter filter = new FileNameExtensionFilter(
 			        "MP3 Files", "mp3");
@@ -196,7 +197,8 @@ public class MediaController{
 			MusicChooser.setAcceptAllFileFilterUsed(false);
 			if (MusicChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 				File addedFile = MusicChooser.getSelectedFile();
-			    String userpath = new File("db/userdata/userMusics").getAbsolutePath();
+				String path = new File("").getAbsolutePath();
+			    String userpath = new File(path+"/db/userdata/userMusics").getAbsolutePath();
 			    reader = new BufferedReader(new FileReader(userpath+"/"+username+".txt"));
 				String line = reader.readLine();
 				Boolean finded = false;
@@ -238,7 +240,8 @@ public class MediaController{
 		try{
 			selectedMusic = lstViewMusics.getSelectionModel().getSelectedItem();
 			if(selectedMusic != null){
-				String LoadUserpath = new File("db/userdata/userMusics").getAbsolutePath();
+				String path = new File("").getAbsolutePath();
+				String LoadUserpath = new File(path+"/db/userdata/userMusics").getAbsolutePath();
 				FileWriter tempFile = new FileWriter(LoadUserpath+"/temp.txt");
 				FileReader localFile = new FileReader(LoadUserpath+"/"+username+".txt");
 				BufferedReader readerRemoval = new BufferedReader(localFile);
@@ -272,7 +275,8 @@ public class MediaController{
 	 */
 	public void LoadMusic(ActionEvent event){
 		try {
-			String LoadUserpath = new File("db/userdata/userMusics").getAbsolutePath();
+			String path = new File("").getAbsolutePath();
+			String LoadUserpath = new File(path+"/db/userdata/userMusics").getAbsolutePath();
 	    	reader = new BufferedReader(new FileReader(LoadUserpath+"/"+username+".txt"));
 	    	String line = reader.readLine();
 	    	
@@ -298,7 +302,8 @@ public class MediaController{
 	 */
 	public void LoadPlaylists(ActionEvent event){
 		try {
-			String PlaylistPath = new File("db/userdata/vipPlaylists/"+username).getAbsolutePath();
+			String path = new File("").getAbsolutePath();
+			String PlaylistPath = new File(path+"/db/userdata/vipPlaylists/"+username).getAbsolutePath();
 			File LoadPlaylists = new File(PlaylistPath);
 			File[] playlistList = LoadPlaylists.listFiles();
 			for(File f : playlistList) {
@@ -318,7 +323,8 @@ public class MediaController{
 		try {
 			selectedPlaylist = lstViewPlaylists.getSelectionModel().getSelectedItem();
 			
-			String playlistFile = new File("db/userdata/vipPlaylists/"+username+"/"+selectedPlaylist).getAbsolutePath();
+			String path = new File("").getAbsolutePath();
+			String playlistFile = new File(path+"/db/userdata/vipPlaylists/"+username+"/"+selectedPlaylist).getAbsolutePath();
 	    	reader = new BufferedReader(new FileReader(playlistFile));
 	    	String line = reader.readLine();
 	    	

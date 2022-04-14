@@ -1,0 +1,5 @@
+The Fantastic Legend of Toono:::/src/media/songs/Touhou06/The Fantastic Legend of Toono.mp3
+Necrofantasia:::/src/media/songs/Touhou06/Necrofantasia.mp3
+Charming Domination:::/src/media/songs/Touhou06/Charming Domination.mp3
+Bloom Nobly, Cherry Blossoms of Sumizome:::/src/media/songs/Touhou06/Bloom Nobly, Cherry Blossoms of Sumizome.mp3
+A Maiden's Illusionary Funeral -Necrofantasy-:::/src/media/songs/Touhou06/A Maiden's Illusionary Funeral -Necrofantasy-.mp3

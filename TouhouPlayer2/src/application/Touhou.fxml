@@ -50,7 +50,7 @@
       </VBox>
    </right>
    <center>
-      <HBox prefHeight="346.0" prefWidth="366.0" style="-fx-background-image: url('file:../../media/img/thback.jpg'); -fx-background-repeat: stretch; -fx-background-color: #404;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="346.0" prefWidth="366.0" style="-fx-background-image: url('file:media/img/thback.jpg'); -fx-background-repeat: stretch; -fx-background-color: #404;" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" prefHeight="300.0" prefWidth="202.0">
                <children>
