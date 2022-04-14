@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+group 'application'
+version '1.0-SNAPSHOT'
+
+application {
+    mainClass = 'application.Touhou'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'javazoom:jlayer:1.0.1'
+}
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ["src"]
+        }
+        resources {
+            srcDirs = ["src", "doc","db","media","temp"]
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class':'application.Touhou'
+        )
+    }
+}
